@@ -1,4 +1,4 @@
-namespace HouseRentingSystem
+namespace House_renting_system_Project
 {
     public class Program
     {
@@ -20,15 +20,15 @@ namespace HouseRentingSystem
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
-
             app.UseRouting();
 
             app.UseAuthorization();
 
+            app.MapStaticAssets();
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Home}/{action=Index}/{id?}")
+                .WithStaticAssets();
 
             app.Run();
         }
