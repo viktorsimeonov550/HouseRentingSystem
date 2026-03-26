@@ -1,46 +1,55 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using static House_renting_system_Project.Data.Data.DataConstants.House;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Data.Common;
-using System.Linq;
+using System.Net.Cache;
+using System.Reflection.Metadata.Ecma335;
+using System.Reflection.PortableExecutable;
+using System.Security.Principal;
 using System.Text;
-using System.Threading.Tasks;
-using static HouseRentingSystem.Data.Data.DataConstants.House;
+using System.ComponentModel.DataAnnotations.Schema;
 
-
-namespace HouseRentingSystem.Data.Data.Entities
+namespace House_renting_system_Project.Data.Data.Entities
 {
     public class House
     {
         [Key]
-        public int Id { get; set; }
-        [MaxLength(50)]
+        public int Id { get; init; }
+
+        [MaxLength(TitleMaxLength)]
         [MinLength(10)]
         [Required]
         public string Title { get; set; } = null!;
-        [MaxLength(150)]
+
+        [MaxLength(AddressMaxLength)]
         [MinLength(30)]
         [Required]
+        public string Address { get; set; } = null!;
 
-        public string Address { get; set; }
-        [MaxLength(500)]
+        [MaxLength(DescriptionMaxLength)]
         [MinLength(50)]
         [Required]
-
         public string Description { get; set; } = null!;
-        [Required]
 
+        [Required]
         public string ImageUrl { get; set; } = null!;
+
         [MaxLength(2000)]
         [Required]
+        [Column(TypeName = "decimal(12, 3)")]
+        public decimal PricePerMonth { get; set; }
 
-        public string PricePerMonth { get; set; }
-        public string CategoryId { get; set; }
-        public Categeory Caytegory { get; set; }
+        public int CategoryId { get; set; }
+        public Category Category { get; init; } = null!;
+
         public int AgentId { get; set; }
         public Agent Agent { get; set; }
         public string? RenterId { get; set; }
-        public IdentityUser? Renter { get; set; }
+        public ApplicationUser? Renter { get; set; }
+
+
+
     }
 }

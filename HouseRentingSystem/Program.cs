@@ -1,3 +1,8 @@
+using House_renting_system_Project.Data.Data;
+using House_renting_system_Project.Data.Data.Entities;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+
 namespace House_renting_system_Project
 {
     public class Program
@@ -7,6 +12,19 @@ namespace House_renting_system_Project
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            var connectionString = builder.Configuration.GetConnectionString("ConnectionString");
+
+            builder.Services.AddDbContext<HouseRentingDbContext>(opt => opt.UseSqlServer(connectionString));
+            builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+                .AddEntityFrameworkStores<HouseRentingDbContext>()
+                .AddDefaultTokenProviders();
+
+            builder.Services.ConfigureApplicationCookie(options =>
+            {
+                options.LogoutPath = "/User/Login";
+                options.AccessDeniedPath = "/User/AccessDenied";
+            });
+
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();

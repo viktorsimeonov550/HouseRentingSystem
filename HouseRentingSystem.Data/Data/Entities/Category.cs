@@ -1,21 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using static HouseRentingSystem.Data.Data.DataConstants.Category;
+using static House_renting_system_Project.Data.Data.DataConstants.Category;
 
-namespace HouseRentingSystem.Data.Data.Entities
+namespace House_renting_system_Project.Data.Data.Entities
 {
     public class Category
     {
-        [Key]
-        public int Id { get; set; }
-        [MaxLength(50)]
+        public int Id { get; init; }
         [Required]
+        [MaxLength(NameMaxLength)]
         public string Name { get; set; } = null!;
-
-        public IEnumerable<House> Houses { get; set; } = new List<House>();
+        public IEnumerable<House> Houses { get; init; } = new List<House>();
     }
 }

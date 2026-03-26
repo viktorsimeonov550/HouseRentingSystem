@@ -1,15 +1,12 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
-using System.Data.Common;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace HouseRentingSystem.Data.Data.Entities
+namespace House_renting_system_Project.Data.Data.Entities
 {
-    public class ApplicationUser : IdentityUser<ApplicationUser>
+    public class ApplicationUser : IdentityUser
     {
-        public ApplicationUser() { }
+
     }
 }
