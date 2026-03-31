@@ -38,4 +38,6 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\House_renting_system-Project.Data\House_renting_system-Project.Data.csproj" />
+</ItemGroup>
+
 	
