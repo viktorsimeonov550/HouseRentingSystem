@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace House_renting_system_Project.Models.Auth
+namespace HouseRentingSystem.Models.Auth
 {
     public class RegisterViewModel
     {

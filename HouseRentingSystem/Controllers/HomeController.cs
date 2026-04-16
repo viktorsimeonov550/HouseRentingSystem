@@ -1,9 +1,9 @@
-﻿using House_renting_system_Project.Models;
+﻿using HouseRentingSystem.Models;
 using HouseRentingSystem.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace House_renting_system_Project.Controllers
+namespace HouseRentingSystem.Controllers
 {
     public class HomeController : Controller
     {

@@ -1,9 +1,9 @@
-﻿using House_renting_system_Project.Data.Data.Entities;
-using House_renting_system_Project.Models.Auth;
+﻿using HouseRentingSystem.Data.Data.Entities;
+using HouseRentingSystem.Models.Auth;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace House_renting_system_Project.Controllers
+namespace HouseRentingSystem.Controllers
 {
     public class AuthController : Controller
     {

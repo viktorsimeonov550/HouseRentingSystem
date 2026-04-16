@@ -2,7 +2,7 @@
 using System.Reflection.PortableExecutable;
 using System.Runtime.CompilerServices;
 
-namespace House_renting_system_Project.Models.Auth
+namespace HouseRentingSystem.Models.Auth
 {
     public class LoginViewModel
     {

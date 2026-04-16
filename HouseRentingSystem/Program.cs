@@ -1,9 +1,9 @@
-using House_renting_system_Project.Data.Data;
-using House_renting_system_Project.Data.Data.Entities;
+using HouseRentingSystem.Data.Data;
+using HouseRentingSystem.Data.Data.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace House_renting_system_Project
+namespace HouseRentingSystem
 {
     public class Program
     {
